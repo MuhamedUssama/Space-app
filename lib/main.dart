@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/ui/home_screen.dart';
 
 import 'ui/on_boarding_screen.dart';
 
@@ -16,6 +17,7 @@ class SpaceApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         OnBoardingScreen.routeName: (_) => const OnBoardingScreen(),
+        HomeScreen.routeName: (_) => const HomeScreen(),
       },
       initialRoute: OnBoardingScreen.routeName,
     );
