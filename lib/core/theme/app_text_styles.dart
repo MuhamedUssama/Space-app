@@ -14,4 +14,11 @@ class AppTextStyles {
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
+
+  static const TextStyle font24White700Grotesk = TextStyle(
+    color: AppColors.white,
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'SpaceGrotesk',
+  );
 }

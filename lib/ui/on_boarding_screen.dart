@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:space_app/core/theme/app_colors.dart';
-import 'package:space_app/ui/home_screen.dart';
 
 import '../core/theme/app_text_styles.dart';
+import '../core/utils/app_assets.dart';
+import 'home_screen.dart';
+import 'widgets/explore_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   static const String routeName = "/onBoardingScreen";
@@ -14,7 +16,7 @@ class OnBoardingScreen extends StatelessWidget {
       backgroundColor: AppColors.black,
       body: Stack(
         children: [
-          Image.asset('assets/images/on_boarding_image.png'),
+          Image.asset(AppAssets.onBoardingImage),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Align(
@@ -27,27 +29,11 @@ class OnBoardingScreen extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
-              child: FilledButton(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-                },
-                style: FilledButton.styleFrom(
-                  backgroundColor: AppColors.red,
-                  padding: const EdgeInsets.all(16),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Explore', style: AppTextStyles.font20White600),
-                    Icon(
-                      Icons.arrow_forward,
-                      color: AppColors.white,
-                    ),
-                  ],
-                ),
-              ),
+            child: ExploreButton(
+              title: 'Explore',
+              function: () {
+                Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+              },
             ),
           )
         ],
