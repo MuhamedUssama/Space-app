@@ -48,9 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
               onPageChanged: (page) {
                 setState(() {});
               },
+              itemCount: Planet.planets.length,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  "assets/images/${Planet.planets[index % 9].image}",
+                  "assets/images/${Planet.planets[index].image}",
                 );
               },
             ),
@@ -60,13 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  if (currentPage != 0) {
-                    controller.animateToPage(
-                      (currentPage - 1),
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  }
+                  controller.animateToPage(
+                    (currentPage - 1),
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: AppColors.white,
@@ -76,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: const Icon(Icons.arrow_back),
               ),
               Text(
-                Planet.planets[currentPage % 9].name,
+                Planet.planets[currentPage].name,
                 style: AppTextStyles.font24White700Grotesk,
               ),
               ElevatedButton(
@@ -98,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: 50),
           ExploreButton(
-            title: 'Explore ${Planet.planets[currentPage % 9].name}',
+            title: 'Explore ${Planet.planets[currentPage].name}',
             function: () {
               Navigator.pushNamed(
                 context,
