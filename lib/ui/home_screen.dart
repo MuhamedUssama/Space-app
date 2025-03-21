@@ -50,8 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               itemCount: Planet.planets.length,
               itemBuilder: (context, index) {
-                return Image.asset(
-                  "assets/images/${Planet.planets[index].image}",
+                return Hero(
+                  tag: Planet.planets[index].title,
+                  child: Image.asset(
+                    "assets/images/${Planet.planets[index].image}",
+                  ),
                 );
               },
             ),

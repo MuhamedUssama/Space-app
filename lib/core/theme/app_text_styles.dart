@@ -21,4 +21,18 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     fontFamily: 'SpaceGrotesk',
   );
+
+  static const TextStyle font16White300Grotesk = TextStyle(
+    color: AppColors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w300,
+    fontFamily: 'SpaceGrotesk',
+  );
+
+  static const TextStyle font16White700Grotesk = TextStyle(
+    color: AppColors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'SpaceGrotesk',
+  );
 }
